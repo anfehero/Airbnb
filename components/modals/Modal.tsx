@@ -14,7 +14,7 @@ interface ModalProps {
   actionLabel: string
   disabled?: boolean
   secondaryAction?: () => void
-  secondaryActionLabel: string
+  secondaryActionLabel?: string
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -59,7 +59,7 @@ const Modal: React.FC<ModalProps> = ({
       return
     }
 
-    secondaryAction
+    secondaryAction()
   }, [disabled, secondaryAction])
 
   if (!isOpen) {

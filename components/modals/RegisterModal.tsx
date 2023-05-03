@@ -12,15 +12,18 @@ import {
 
 import Heading from '../Heading'
 import useRegisterModal from '@/app/hooks/useRegisterModal'
+import useLoginModal from '@/app/hooks/useLoginModal'
 import Modal from './Modal'
 import Input from '../inputs/input'
 import { toast } from 'react-hot-toast'
 import Button from '../Button'
+import { signIn } from 'next-auth/react'
+import LoginModal from './LoginModal'
 
 
 const RegisterModal = () => {
   const RegisterModal = useRegisterModal()
-
+  const LoginModal = useLoginModal()
   const [isLoading, setIsLoading] = useState(false)
 
   const {
@@ -51,9 +54,15 @@ const RegisterModal = () => {
         setIsLoading(false)
       })
 
-      console.log(data)
+    console.log(data)
 
   }
+
+
+  const toggle = useCallback(() => {
+    RegisterModal.onClose()
+    LoginModal.onOpen()
+  }, [LoginModal, RegisterModal])
 
   const bodyContent = (
     <div className='flex flex-col gap-4'>
@@ -102,14 +111,14 @@ const RegisterModal = () => {
         outline
         label='Continue with google'
         icon={FcGoogle}
-        onClick={() => { }}
+        onClick={() => signIn('google')}
       />
 
       <Button
         outline
         label='Continue with Github'
         icon={AiFillGithub}
-        onClick={() => { }}
+        onClick={() => signIn('github')}
       />
 
       <div className=' text-neutral-500 text-center mt-4 font-light'>
@@ -118,9 +127,9 @@ const RegisterModal = () => {
             Already have an account?
           </div>
 
-          <div 
-          onClick={RegisterModal.onClose}
-          className='text-neutral-800 cursor-pointer hover:underline'>
+          <div
+            onClick={toggle}
+            className='text-neutral-800 cursor-pointer hover:underline'>
             Log in
           </div>
 
