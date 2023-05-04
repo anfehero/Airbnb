@@ -51,10 +51,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@cloudinary-util/url-loader@^3.4.0":
-  version "3.5.0"
-  resolved "https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-3.5.0.tgz"
-  integrity sha512-zrSbNrt3WC0cjzm8kJVbS14f12zfUSAfQxSywvCpPiOshsm3+N5bL4t5QpG9XQeaOo9gWitDWGJRJFL2iKql/A==
+"@cloudinary-util/url-loader@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.npmjs.org/@cloudinary-util/url-loader/-/url-loader-3.5.1.tgz"
+  integrity sha512-Czh9/afEDtLBNuGoSPTvNSgUILCFMDd9pTwwLdonuTI+F5vJhGHYSLLmQF2ddDHVMd2c3S4RkcEC1Hhfm6x4Ow==
   dependencies:
     "@cloudinary-util/util" "2.0.1"
     "@cloudinary/url-gen" "^1.8.7"
@@ -2166,12 +2166,12 @@ next-auth@^4, next-auth@^4.22.1:
     preact-render-to-string "^5.1.19"
     uuid "^8.3.2"
 
-next-cloudinary@^4.9.0:
-  version "4.9.0"
-  resolved "https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-4.9.0.tgz"
-  integrity sha512-vY7eRtlUcy8C9YUqzEbHl1n3UJuEHvSST7KWmlKJqqGB2uFxvFVf+eWsRtilBlzRv+A+EaLmBPGr+3sTJl8ZHg==
+next-cloudinary@^4.10.0:
+  version "4.10.0"
+  resolved "https://registry.npmjs.org/next-cloudinary/-/next-cloudinary-4.10.0.tgz"
+  integrity sha512-yOoG0jFO4y8+hLR+07W2QkTvFKKe6padKVpemEnkaOV/HxBnoHhB4gjXoHIUEVc9aKjEsji+3ViwwFzWR4ukMA==
   dependencies:
-    "@cloudinary-util/url-loader" "^3.4.0"
+    "@cloudinary-util/url-loader" "^3.5.1"
     "@cloudinary-util/util" "^2.0.1"
     "@cloudinary/url-gen" "^1.8.6"
 
