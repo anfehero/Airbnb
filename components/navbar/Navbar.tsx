@@ -6,11 +6,11 @@ import Container from '../Container'
 import Logo from '../navbar/Logo'
 import Search from './Search'
 import UserMenu from './UserMenu'
-import { safeUser } from '@/app/types'
+import { SafeUser } from '@/app/types';
 import Categories from './Categories'
 
 interface NavbarProps {
-  currentUser?: safeUser | null
+  currentUser?: SafeUser | null
 }
 
 const Navbar: React.FC<NavbarProps> = ({
