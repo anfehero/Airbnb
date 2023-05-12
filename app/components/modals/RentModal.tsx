@@ -61,16 +61,16 @@ const RentModal = () => {
     }
   });
 
-  const location = watch('location');
-  const category = watch('category');
-  const guestCount = watch('guestCount');
-  const roomCount = watch('roomCount');
-  const bathroomCount = watch('bathroomCount');
-  const imageSrc = watch('imageSrc');
+  const location = watch('location')
+  const category = watch('category')
+  const guestCount = watch('guestCount')
+  const roomCount = watch('roomCount')
+  const bathroomCount = watch('bathroomCount')
+  const imageSrc = watch('imageSrc')
 
   const Map = useMemo(() => dynamic(() => import('../Map'), { 
     ssr: false 
-  }), [location]);
+  }), [location])
 
 
   const setCustomValue = (id: string, value: any) => {
@@ -82,33 +82,33 @@ const RentModal = () => {
   }
 
   const onBack = () => {
-    setStep((value) => value - 1);
+    setStep((value) => value - 1)
   }
 
   const onNext = () => {
-    setStep((value) => value + 1);
+    setStep((value) => value + 1)
   }
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     if (step !== STEPS.PRICE) {
-      return onNext();
+      return onNext()
     }
     
-    setIsLoading(true);
+    setIsLoading(true)
 
     axios.post('/api/listings', data)
     .then(() => {
       toast.success('Listing created!');
-      router.refresh();
+      router.refresh()
       reset();
       setStep(STEPS.CATEGORY)
-      rentModal.onClose();
+      rentModal.onClose()
     })
     .catch(() => {
       toast.error('Something went wrong.');
     })
     .finally(() => {
-      setIsLoading(false);
+      setIsLoading(false)
     })
   }
 
@@ -118,7 +118,7 @@ const RentModal = () => {
     }
 
     return 'Next'
-  }, [step]);
+  }, [step])
 
   const secondaryActionLabel = useMemo(() => {
     if (step === STEPS.CATEGORY) {
@@ -126,7 +126,7 @@ const RentModal = () => {
     }
 
     return 'Back'
-  }, [step]);
+  }, [step])
 
   let bodyContent = (
     <div className="flex flex-col gap-8">
@@ -135,15 +135,8 @@ const RentModal = () => {
         subtitle="Pick a category"
       />
       <div 
-        className="
-          grid 
-          grid-cols-1 
-          md:grid-cols-2 
-          gap-3
-          max-h-[50vh]
-          overflow-y-auto
-        "
-      >
+        className="grid grid-cols-1 md:grid-cols-2 gap-3
+          max-h-[50vh] overflow-y-auto">
         {categories.map((item) => (
           <div key={item.label} className="col-span-1">
             <CategoryInput
@@ -282,7 +275,7 @@ const RentModal = () => {
       onClose={rentModal.onClose}
       body={bodyContent}
     />
-  );
+  )
 }
 
-export default RentModal;
+export default RentModal

@@ -13,7 +13,7 @@ const uploadPreset = "pgc9ehd5";
 
 interface ImageUploadProps {
   onChange: (value: string) => void;
-  value: string;
+  value: string
 }
 
 const ImageUpload: React.FC<ImageUploadProps> = ({
@@ -22,11 +22,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 }) => {
   const handleUpload = useCallback((result: any) => {
     onChange(result.info.secure_url);
-  }, [onChange]);
+  }, [onChange])
 
   return (
-    <CldUploadWidget 
-      onUpload={handleUpload} 
+    <CldUploadWidget
+      onUpload={handleUpload}
       uploadPreset={uploadPreset}
       options={{
         maxFiles: 1
@@ -36,25 +36,11 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
         return (
           <div
             onClick={() => open?.()}
-            className="
-              relative
-              cursor-pointer
-              hover:opacity-70
-              transition
-              border-dashed 
-              border-2 
-              p-20 
-              border-neutral-300
-              flex
-              flex-col
-              justify-center
-              items-center
-              gap-4
-              text-neutral-600
-            "
-          >
+            className=" relative cursor-pointer hover:opacity-70 transition border-dashed border-2 p-20 
+              border-neutral-300 flex flex-col justify-center items-center gap-4 text-neutral-600 ">
+
             <TbPhotoPlus
-              size={50}
+              size={50}                                                                                                                         
             />
             <div className="font-semibold text-lg">
               Click to upload
@@ -63,18 +49,18 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               <div className="
               absolute inset-0 w-full h-full">
                 <Image
-                  fill 
-                  style={{ objectFit: 'cover' }} 
-                  src={value} 
-                  alt="House" 
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  src={value}
+                  alt="House"
                 />
               </div>
             )}
           </div>
-        ) 
-    }}
+        )
+      }}
     </CldUploadWidget>
   );
 }
 
-export default ImageUpload;
+export default ImageUpload

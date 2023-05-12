@@ -26,14 +26,14 @@ export default async function getListings(
       category,
     } = params;
 
-    let query: any = {};
+    let query: any = {}
 
     if (userId) {
-      query.userId = userId;
+      query.userId = userId
     }
 
     if (category) {
-      query.category = category;
+      query.category = category
     }
 
     if (roomCount) {
@@ -82,15 +82,15 @@ export default async function getListings(
       orderBy: {
         createdAt: 'desc'
       }
-    });
+    })
 
     const safeListings = listings.map((listing) => ({
       ...listing,
       createdAt: listing.createdAt.toISOString(),
-    }));
+    }))
 
     return safeListings;
   } catch (error: any) {
-    throw new Error(error);
+    throw new Error(error)
   }
 }

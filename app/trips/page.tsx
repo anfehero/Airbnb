@@ -31,7 +31,7 @@ const TripsPage = async () => {
           subtitle="Looks like you havent reserved any trips."
         />
       </ClientOnly>
-    );
+    )
   }
 
   return (
@@ -41,7 +41,7 @@ const TripsPage = async () => {
         currentUser={currentUser}
       />
     </ClientOnly>
-  );
+  )
 }
  
-export default TripsPage;
+export default TripsPage

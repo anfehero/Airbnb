@@ -19,8 +19,7 @@ export default async function getCurrentUser() {
       where: {
         email: session.user.email as string,
       }
-    });
-
+    })
     if (!currentUser) {
       return null;
     }
@@ -33,7 +32,7 @@ export default async function getCurrentUser() {
         currentUser.emailVerified?.toISOString() || null,
     };
   } catch (error: any) {
-    return null;
+    return null
   }
 }
 

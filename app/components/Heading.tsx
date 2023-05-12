@@ -1,9 +1,9 @@
 'use client';
 
 interface HeadingProps {
-  title: string;
-  subtitle?: string;
-  center?: boolean;
+  title: string
+  subtitle?: string
+  center?: boolean
 }
 
 const Heading: React.FC<HeadingProps> = ({ 
@@ -20,7 +20,7 @@ const Heading: React.FC<HeadingProps> = ({
         {subtitle}
       </div>
     </div>
-   );
+   )
 }
  
-export default Heading;
+export default Heading

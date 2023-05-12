@@ -6,13 +6,13 @@ import Button from "../Button";
 import Calendar from "../inputs/Calendar";
 
 interface ListingReservationProps {
-  price: number;
-  dateRange: Range,
-  totalPrice: number;
-  onChangeDate: (value: Range) => void;
-  onSubmit: () => void;
-  disabled?: boolean;
-  disabledDates: Date[];
+  price: number
+  dateRange: Range
+  totalPrice: number
+  onChangeDate: (value: Range) => void
+  onSubmit: () => void
+  disabled?: boolean
+  disabledDates: Date[]
 }
 
 const ListingReservation: React.FC<
@@ -28,16 +28,8 @@ const ListingReservation: React.FC<
 }) => {
   return ( 
     <div 
-      className="
-      bg-white 
-        rounded-xl 
-        border-[1px]
-      border-neutral-200 
-        overflow-hidden
-      "
-    >
-      <div className="
-      flex flex-row items-center gap-1 p-4">
+      className=" bg-white rounded-xl border-[1px] border-neutral-200 overflow-hidden">
+      <div className="flex flex-row items-center gap-1 p-4">
         <div className="text-2xl font-semibold">
           $ {price}
         </div>
@@ -62,16 +54,7 @@ const ListingReservation: React.FC<
       </div>
       <hr />
       <div 
-        className="
-          p-4 
-          flex 
-          flex-row 
-          items-center 
-          justify-between
-          font-semibold
-          text-lg
-        "
-      >
+        className="p-4 flex flex-row items-center justify-between font-semibold text-lg">
         <div>
           Total
         </div>
@@ -80,7 +63,7 @@ const ListingReservation: React.FC<
         </div>
       </div>
     </div>
-   );
+   )
 }
  
-export default ListingReservation;
+export default ListingReservation

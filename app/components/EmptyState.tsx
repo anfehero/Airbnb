@@ -6,8 +6,8 @@ import Button from "./Button";
 import Heading from "./Heading";
 
 interface EmptyStateProps {
-  title?: string;
-  subtitle?: string;
+  title?: string
+  subtitle?: string
   showReset?: boolean;
 }
 
@@ -18,17 +18,9 @@ const EmptyState: React.FC<EmptyStateProps> = ({
 }) => {
   const router = useRouter();
 
-  return ( 
-    <div 
-      className="
-        h-[60vh]
-        flex 
-        flex-col 
-        gap-2 
-        justify-center 
-        items-center 
-      "
-    >
+  return (
+    <div className=" h-[60vh] flex flex-col gap-2 
+        justify-center items-center">
       <Heading
         center
         title={title}
@@ -44,7 +36,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({
         )}
       </div>
     </div>
-   );
+  )
 }
- 
+
 export default EmptyState;

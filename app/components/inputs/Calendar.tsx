@@ -11,8 +11,8 @@ import 'react-date-range/dist/theme/default.css';
 
 interface DatePickerProps {
   value: Range,
-  onChange: (value: RangeKeyDict) => void;
-  disabledDates?: Date[];
+  onChange: (value: RangeKeyDict) => void
+  disabledDates?: Date[]
 }
 
 const DatePicker: React.FC<DatePickerProps> = ({
@@ -34,4 +34,4 @@ const DatePicker: React.FC<DatePickerProps> = ({
    );
 }
  
-export default DatePicker;
+export default DatePicker

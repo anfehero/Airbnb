@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const Logo = () => {
-  const router = useRouter();
+  const router = useRouter()
 
   return ( 
     <Image
@@ -15,7 +15,7 @@ const Logo = () => {
       width="100" 
       alt="Logo" 
     />
-   );
+   )
 }
  
-export default Logo;
+export default Logo
