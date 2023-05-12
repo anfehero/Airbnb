@@ -1,24 +1,25 @@
-'use client'
+'use client';
 
-import Container from "../Container"
-
-import { TbBeach, TbMountain, TbPool } from 'react-icons/tb'
-import {
-  GiWindmill,
+import { usePathname, useSearchParams } from 'next/navigation';
+import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
+import { 
+  GiBarn, 
+  GiBoatFishing, 
+  GiCactus, 
+  GiCastle, 
+  GiCaveEntrance, 
+  GiForestCamp, 
   GiIsland,
-  GiBoatFishing,
-  GiCastle,
-  GiCampingTent,
-  GiCaveEntrance,
-  GiDiamondTrophy,
-  GiSnowing,
-  GiCactus,
-  GiBarn
-} from 'react-icons/gi'
-import { MdOutlineVilla } from 'react-icons/md'
-import { FaSkiing } from 'react-icons/fa'
-import CategoryBox from "../CategoryBox"
-import { usePathname, useSearchParams } from "next/navigation"
+  GiWindmill
+} from 'react-icons/gi';
+import { FaSkiing } from 'react-icons/fa';
+import { BsSnow } from 'react-icons/bs';
+import { IoDiamond } from 'react-icons/io5';
+import { MdOutlineVilla } from 'react-icons/md';
+
+import CategoryBox from "../CategoryBox";
+import Container from '../Container';
+
 
 export const categories = [
   {
@@ -73,12 +74,12 @@ export const categories = [
   },
   {
     label: 'Camping',
-    icon: GiCampingTent,
+    icon: GiForestCamp,
     description: 'This property offers camping activities!'
   },
   {
     label: 'Arctic',
-    icon: GiSnowing,
+    icon: BsSnow,
     description: 'This property is in arctic environment!'
   },
   {
@@ -93,38 +94,44 @@ export const categories = [
   },
   {
     label: 'Lux',
-    icon: GiDiamondTrophy,
+    icon: IoDiamond,
     description: 'This property is brand new and luxurious!'
   }
-
 ]
 
 const Categories = () => {
-  const params = useSearchParams()
-  const category = params?.get('category')
-  const pathname = usePathname()
-
-  const isMainPage = pathname === '/'
+  const params = useSearchParams();
+  const category = params?.get('category');
+  const pathname = usePathname();
+  const isMainPage = pathname === '/';
 
   if (!isMainPage) {
-    return null
+    return null;
   }
 
   return (
-    <div>
-      <Container>
-        <div className="pt-4 flex flex-row items-center justify-between overflow-x-auto">
-          {categories.map((item) => (
-            <CategoryBox
-              label={item.label}
-              selected={category === item.label}
-              icon={item.icon} />
-          ))}
-        </div>
-      </Container>
-
-    </div>
-  )
+    <Container>
+      <div
+        className="
+          pt-4
+          flex 
+          flex-row 
+          items-center 
+          justify-between
+          overflow-x-auto
+        "
+      >
+        {categories.map((item) => (
+          <CategoryBox 
+            key={item.label}
+            label={item.label}
+            icon={item.icon}
+            selected={category === item.label}
+          />
+        ))}
+      </div>
+    </Container>
+  );
 }
-
-export default Categories
+ 
+export default Categories;
