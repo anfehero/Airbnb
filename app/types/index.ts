@@ -7,7 +7,7 @@ Listing,
   createdAt:string
 }
 
-export type SafeRservations = Omit <
+export type SafeReservations = Omit <
 Reservation,
 'createdAte' | 'starDate' | 'endDate'
 > & {

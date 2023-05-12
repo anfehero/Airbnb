@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { differenceInDays, eachDayOfInterval } from 'date-fns';
 
 import useLoginModal from "@/app/hooks/useLoginModal";
-import { SafeListing, SafeRservations, SafeUser } from "@/app/types";
+import { SafeListing, SafeReservations, SafeUser } from "@/app/types";
 
 import Container from "@/components/Container";
 import { categories } from "@/components/navbar/Categories";
@@ -20,13 +20,13 @@ const initialDateRange = {
   startDate: new Date(),
   endDate: new Date(),
   key: 'selection'
-};
+}
 
 interface ListingClientProps {
-  reservations?: SafeRservations[];
+  reservations?: SafeReservations[];
   listing: SafeListing & {
     user: SafeUser
-  };
+  }
   currentUser?: SafeUser | null
 }
 
@@ -121,6 +121,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
             locationValue={listing.locationValue}
             id={listing.id}
             currentUser={currentUser}
+            
           />
           <div
             className="grid grid-cols-1 md:grid-cols-7 md:gap-10 mt-6">
