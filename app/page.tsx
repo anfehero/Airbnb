@@ -1,8 +1,8 @@
-import ClientOnly from "@/components/ClientOnly";
-import Container from "@/components/Container";
-import EmptyState from "@/components/EmptyState";
+import ClientOnly from "@/app/components/ClientOnly";
+import Container from "@/app/components/Container";
+import EmptyState from "@/app/components/EmptyState";
 import getListings from "./Actions/getListings";
-import ListingCard from "@/components/listings/ListingCard";
+import ListingCard from "@/app/components/listings/ListingCard";
 import getCurrentUser from "./Actions/getCurrentUser";
 
 export default async function Home() {

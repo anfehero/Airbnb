@@ -1,14 +1,14 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-import Navbar from '@/components/navbar/Navbar'
-import ClientOnly from '@/components/ClientOnly'
-import Modal from '@/components/modals/Modal'
-import RegisterModal from '@/components/modals/RegisterModal'
-import LoginModal from '@/components/modals/LoginModal'
+import Navbar from '@/app/components/navbar/Navbar'
+import ClientOnly from '@/app/components/ClientOnly'
+import Modal from '@/app/components/modals/Modal'
+import RegisterModal from '@/app/components/modals/RegisterModal'
+import LoginModal from '@/app/components/modals/LoginModal'
 import ToasterProvider from './providers/ToasterProvider'
 import getCurrentUser from './Actions/getCurrentUser'
-import RentModal from '@/components/modals/RentModal'
+import RentModal from '@/app/components/modals/RentModal'
 
 
 export const metadata = {

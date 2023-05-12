@@ -10,11 +10,11 @@ import { differenceInDays, eachDayOfInterval } from 'date-fns';
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { SafeListing, SafeReservations, SafeUser } from "@/app/types";
 
-import Container from "@/components/Container";
-import { categories } from "@/components/navbar/Categories";
-import ListingHead from "@/components/listings/ListingHead";
-import ListingInfo from "@/components/listings/ListingInfo";
-import ListingReservation from "@/components/listings/ListingReservation";
+import Container from "@/app/components/Container";
+import { categories } from "@/app/components/navbar/Categories";
+import ListingHead from "@/app/components/listings/ListingHead";
+import ListingInfo from "@/app/components/listings/ListingInfo";
+import ListingReservation from "@/app/components/listings/ListingReservation";
 
 const initialDateRange = {
   startDate: new Date(),
