@@ -57,8 +57,8 @@ const RegisterModal = () => {
   }
 
   const onToggle = useCallback(() => {
-    registerModal.onClose();
-    loginModal.onOpen();
+    registerModal.onClose()
+    loginModal.onOpen()
   }, [registerModal, loginModal])
 
   const bodyContent = (
